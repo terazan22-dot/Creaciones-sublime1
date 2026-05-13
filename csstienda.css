@@ -330,6 +330,8 @@ main {
 #cont1 {
     position: relative;
     z-index: 10;
+    width: 90%;
+    max-width: 1200px;
     margin-top: -1100px; 
     background: rgba(255, 255, 255, 0.8); 
     backdrop-filter: blur(5px);
@@ -857,6 +859,52 @@ img {
 }
 
 @media (max-width: 768px) {
+
+    .topbar {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    .buscador {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .fila-textos {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: none;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .fila-textos section {
+        width: 90%;
+        margin-bottom: 20px;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    #cont1 {
+        height: auto;
+        margin-top: -300px;
+        padding: 40px 15px;
+        width: 95%;
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+
+    .contenedor-info-grupal section {
+        width: 100%;
+        text-align: center;
+    }
+
+    .contenido-banner h1 {
+        font-size: 2rem;
+    }
 
     .header {
         flex-direction: column;
