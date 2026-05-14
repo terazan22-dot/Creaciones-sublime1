@@ -1,13 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
+    const hamburger = document.querySelector(".hamburger") || document.getElementById("hamburguesa");
+    const menu = document.querySelector(".nav-links") || document.getElementById("nav-links1");
 
-    const hamburger = document.getElementById("hamburger");
-    const menu = document.getElementById("menu");
-
-    hamburger.addEventListener("click", () => {
-        menu.classList.toggle("active");
-    });
-
+    if (hamburger && menu) {
+        hamburger.addEventListener("click", () => {
+            console.log("¡Click detectado!");
+            menu.classList.toggle("active");
+        });
+    } else {
+        console.log("Error: No se encontró el botón o el menú en el HTML");
+    }
 });
+
 
 const slider = document.getElementById("slider");
 
@@ -30,20 +34,3 @@ setInterval(() => {
   }
 }, 3000);
 
-const imagenes = document.querySelectorAll(".banner-img");
-
-let index = 0;
-
-setInterval(() => {
-
-   imagenes[index].classList.remove("active");
-
-   index++;
-
-   if(index >= imagenes.length){
-      index = 0;
-   }
-
-   imagenes[index].classList.add("active");
-
-}, 4000);
