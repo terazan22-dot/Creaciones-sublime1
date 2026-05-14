@@ -691,64 +691,103 @@ img {
 
 /*sección contacto*/
 
-#con1 {
+#con01 {
     
     background-image: linear-gradient(rgba(248, 249, 250, 0.4), rgba(248, 249, 250, 0.4)), 
                       url("Imagenestienda.img/fondocontacto.jpeg");
     background-size: cover;
     background-position: center;
-    
-
     background-attachment: fixed; 
-    max-width: 1400px;
+    max-width: 1000px;
     margin: 60px auto;
-    padding: 60px 40px;
+    padding: 80px 40px;
     border: 2px solid #d1d5db;
-    border-radius: 15px;
+    border-radius: 20px;
     text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-#con1 h2 {
+#con01 h2 {
     color: black;
     font-size: 2rem;
     margin-bottom: 15px;
-    border-bottom: 2px solid #f39c12;
     display: inline-block;
     padding-bottom: 5px;
 }
 
-#con1 p {
+#con01 p {
     color: black;
     font-family: 'Courier New', Arial, Helvetica, sans-serif;
     margin-bottom: 25px;
     font-size: 1.3rem;
 }
 
-/* El área de los botones o enlaces dentro de la caja */
+/* Botones o enlaces dentro de la caja */
 
-.cajetin-redes {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    border-top: 1px solid #d1d5db;
-    padding-top: 20px;
+/* La sección con el fondo de la laptop */
+#con01 {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url("Imagenestienda.img/fondocontacto.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Corrige la escritura aquí para que se quede quieto */
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.btn-cajetin {
-    text-decoration: none;
+/* Transformamos tus clases actuales en un cajetín pro */
+.cajetin-blanco, .cajetin-contacto {
+    background: rgba(255, 255, 255, 0.95);
+    width: 100%;
+    max-width: 600px;
+    padding: 20px 40px;
+    text-align: center;
+}
+
+/* Unimos visualmente el título con los botones */
+.cajetin-blanco {
+    border-radius: 20px 20px 0 0; /* Redondea solo las esquinas de arriba */
+    border-bottom: 1px solid #eee;
+}
+
+.cajetin-contacto {
+    border-radius: 0 0 20px 20px;
+    padding-bottom: 50px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.btn-contacto {
+    display: block;
+    width: 100%;
+    margin: 15px 0;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
     color: #333;
-    padding: 10px;
-    border: 1px solid #d1d5db;
-    background: white;
-    border-radius: 4px;
-    font-size: 1.3rem;
-    transition: 0.2s;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+    cursor: pointer;
 }
 
-.btn-cajetin:hover {
-    background-color: #f39c12;
-    color: white;
-    border-color: #f39c12;
+.btn-contacto:hover {
+    border-color: #011231;
+    background: #f9f9f9;
+    transform: translateY(-2px);
+}
+
+/* Botón WhatsApp */
+.btn-contacto:nth-child(1) { 
+    background-color: #25D366; 
+    color: white; 
+}
+
+/* Botón Email */
+.btn-contacto:nth-child(2) { 
+    background-color: #011231; 
+    color: white; 
 }
 
 /* FOOTER */
@@ -955,18 +994,14 @@ img {
 
     .hamburger {
         display: flex;
+        cursor: pointer;
+        position: relative;
+        z-index: 9999;
     }
 
     .item-slider {
         flex: 0 0 260px;
         height: 250px;
-    }
-}
-
-@media (min-width: 769px) {
-
-    .hamburger {
-        display: none;
     }
 }
 
