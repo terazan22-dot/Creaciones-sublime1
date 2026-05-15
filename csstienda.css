@@ -365,18 +365,23 @@ main {
     text-align: left;
 }
 
+.fila-textos p {
+    text-align: justify;
+    line-height: 1.5;
+}
+
 .ventajas-rapidas {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: flex-start;
-    
+    flex-wrap: wrap;
     background-color: #f8f9fa;
     padding: 15px 10px; 
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
     border: 1px solid #e0e0e0;
-    
+    overflow: hidden;
     margin: 20px 0; 
     width: 100%;
     max-width: 500px; 
@@ -384,9 +389,12 @@ main {
 }
 
 .ventaja-item {
-    flex: 1;
+    flex: 1 1 120px;
+    min-width: 0;
+    max-width: 200px;
     text-align: left;
-    padding: 5px;
+    padding:10px;
+    box-sizing: border-box;
 }
 
 .ventajas-rapidas .ventaja-item h3 {
@@ -400,6 +408,7 @@ main {
     text-align: justify;
     line-height: 1.2;
     margin-top: 5px;
+    hyphens: auto;
     color: #444;
 }
 
@@ -960,15 +969,67 @@ img {
 
 @media (max-width: 768px) {
 
-    .topbar {
+    .ventajas-rapidas {
         flex-direction: column;
+        align-items: center; 
+        width: 95%; 
+        max-width: none;
+        margin: 10px auto; 
+        gap: 20px; 
+        padding: 20px;
+    }
+
+    .ventaja-item {
+        width: 100%; 
+        max-width: 100%;
+        border-right: none; 
+        border-bottom: 1px solid #e0e0e0; 
+        padding-bottom: 15px;
+        text-align: center; 
+    }
+
+    .ventaja-item:last-child {
+        border-bottom: none;
+    }
+
+    .ventaja-item p {
+        text-align: center; 
+        max-width: 100%;
+        font-size: 0.75rem;
+        word-wrap: break-word;
+    }
+
+    .topbar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         height: auto;
         padding: 10px;
+        gap: 10px;
     }
 
     .buscador {
-        width: 100%;
-        margin: 10px 0;
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .buscador input {
+        width: 100%; 
+        padding-right: 40px; 
+        box-sizing: border-box;
+    }
+
+    .buscador .lupa, .buscador button {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: transparent;
+        border: none;
     }
 
     .fila-textos {
