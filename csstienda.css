@@ -1010,26 +1010,31 @@ img {
 
     .buscador {
         width: 90%;
-        display: flex;
+        display: block;
         justify-content: space-between;
         align-items: center;
-        margin: 0 auto;
+        margin: 10px auto;
         position: relative;
     }
 
     .buscador input {
         width: 100%; 
-        padding-right: 40px; 
+        padding: 12px 45px 12px 15px; 
         box-sizing: border-box;
+        font-size: 16px;
+        position: relative;
+        z-index: 1;
     }
 
     .buscador .lupa, .buscador button {
         position: absolute;
-        right: 10px;
+        right: 15px;
         top: 50%;
         transform: translateY(-50%);
         background: transparent;
         border: none;
+        z-index: 5;
+        pointer-events: none;
     }
 
     .fila-textos {
