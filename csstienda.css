@@ -516,6 +516,20 @@ main {
     font-size: 3.5rem;
 }
 
+.sub-pro-ofertas {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    margin-top: 0;
+    margin-bottom: 0;
+    height: auto;
+    min-height: auto;
+}
+
+.sub-pro-ofertas h2{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
 nav {
     width: 100%;
     padding: 0;
@@ -856,8 +870,14 @@ img {
 
 /* Botón Email */
 .btn-contacto:nth-child(2) { 
-    background-color: #011231; 
+    background-color: #ff8c42; 
     color: white; 
+}
+
+/* Botón Facebook */
+.btn-contacto:nth-child(3) {
+    background-color: #093fa5;
+    color: white;
 }
 
 /* FOOTER */
@@ -913,8 +933,8 @@ img {
   border-top: 1px solid #2a2a2a;
   text-align: center;
   padding: 15px;
-  font-size: 13px;
-  color: #aaa;
+  font-size: 10px;
+  color: #4b4949;
 }
 
 .redes {
