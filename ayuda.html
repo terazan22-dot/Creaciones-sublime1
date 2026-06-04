@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro de Ayuda - Creaciones Sublime</title>
+    
+    <link rel="stylesheet" href="csstienda.css">
+</head>
+<body>
+        <div class="topbar">
+            <div class="lado-izquierdo">
+            <div class="logo-top">
+                <img src="Imagenestienda.img/logo.png" alt="Creaciones Sublime">
+            </div>
+
+            <div class="ub">
+            <p><strong>📍 Envíos a toda Colombia</strong></p>
+            <p><strong>🛒 Entrega rápida</strong></p>
+        </div>
+
+        <div class="buscador">
+            <input type="text" id="miInput"
+            placeholder="Buscar productos...">
+            <button id="miBoton">🔍</button>
+        </div>
+        </div>
+
+        <div class="menu-centro">
+
+            <div class="dropdown">
+                <span class="dropbtn">Ofertas ▾</span>
+
+                <div class="dropdown-content">
+                    <a href="promociones.html">Promociones</a>
+                    <a href="descuentos.html">Descuentos</a>
+                    <a href="ofertas.html">Últimas Ofertas</a>
+                </div>
+            </div>
+
+            <div class="menui">
+                    <a href="ayuda.html">Ayuda</a>
+                    <a href="seguimiento.html">Seguimiento</a>
+                    <a href="index.html#contac1">Contacto</a>
+            </div>
+        </div>
+
+        <div class="carrito">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span id="contador">0</span></div>
+
+        </div>
+
+
+        <div class="menu-principal">
+            
+        <nav>
+
+            <div id="hamburguesa" class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <ul class="nav-links" id="nav-links1">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html#prod1">Productos</a></li>
+                <li><a href="ofertas.html">Ofertas</a></li>
+                <li><a href="index.html#contac1">Contacto</a></li>
+            </ul>
+        </nav>
+        
+        </div>
+    <main>
+        <div class="contenedor-ayuda">
+            <h2>Centro de Ayuda y Preguntas Frecuentes</h2>
+            <p class="subtitulo-ayuda">¿Tienes dudas? Aquí resolvemos las preguntas más comunes sobre tus compras.</p>
+            
+            <div class="categoria-ayuda">
+                <h3><i class="icono">📦</i> Envíos y Entregas</h3>
+                
+                <details class="acordeon-tarjeta">
+                    <summary>¿Cuánto tarda en llegar mi pedido?</summary>
+                    <div class="respuesta-contenido">
+                        <p>Los envíos nacionales tardan entre 2 y 5 días hábiles, dependiendo de tu ubicación. Recibirás un correo con la guía de transporte una vez sea despachado.</p>
+                    </div>
+                </details>
+                <details class="acordeon-tarjeta">
+                    <summary>¿Puedo pasar a recoger mi pedido en persona?</summary>
+                    <div class="respuesta-contenido">
+                        <p>¡Claro que sí! Si te encuentras en la ciudad de Medellín puedes seleccionar la opción de "Recogida Local" al finalizar tu compra. Una vez confirmado el pago, coordinaremos contigo por Whatsapp la fecha y hora para que pases a retirar tu producto sin costo adicional</p>
+                    </div>
+                </details>
+
+                <details class="acordeon-tarjeta">
+                    <summary>¿Tienen envíos gratis?</summary>
+                    <div class="respuesta-contenido">
+                        <p>Sí, ofrecemos envío gratis en compras superiores a $200.000 COP a las principales ciudades del país.</p>
+                    </div>
+                </details>
+            </div>
+
+            <div class="categoria-ayuda">
+                <h3><i class="icono">💳</i> Métodos de Pago</h3>
+                <details class="acordeon-tarjeta">
+                    <summary>¿Qué métodos de pago aceptan?</summary>
+                    <div class="respuesta-contenido">
+                        <p>Aceptamos pagos seguros con tarjetas de crédito/débito, transferencias bancarias directas (PSE, Nequi, Daviplata) y pago contra entrega en zonas seleccionadas.</p>
+                    </div>
+                </details>
+                <details class="acordeon-tarjeta">
+                    <summary>¿Cómo reporto mi pago si hago una transferencia directa?</summary>
+                    <div class="respuesta-contenido">
+                        <p>Si realizas tu pago mediante transferencia directa (Bancolombia o Nequi), solo debes enviar el comprobante digital o captura de pantalla a nuestra línea oficial de WhatsApp junto con tu número de orden. Validaremos el ingreso en menos de 15 minutos para proceder con tu despacho.</p>
+                    </div>
+                </details>
+            </div>
+            
+            <div class="categoria-ayuda">
+                <h3><i class="icono">🛡️</i> Garantías y Devoluciones</h3>
+                <details class="acordeon-tarjeta">
+                    <summary>¿Los productos tienen garantía?</summary>
+                    <div class="respuesta-contenido">
+                        <p>Todos nuestros accesorios tecnológicos y electrónicos cuentan con una garantía de 30 a 90 días por defectos de fábrica. No cubre daños por mal uso.</p>
+                    </div>
+                </details>
+                <details class="acordeon-tarjeta">
+                    <summary>¿Quién asume los costos de envío si debo enviar un producto por garantía?</summary>
+                    <div class="respuesta-contenido">
+                        <p>Si el producto presenta un defecto de fábrica dentro del tiempo de cobertura (30 a 90 días), Creaciones Sublime asumirá la totalidad de los costos de transporte para el cambio o reparación. El artículo debe ser enviado con sus empaques y accesorios originales.</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-seguimiento-clean">
+        <div class="enlaces-legales-tracking">
+            <a href="condiciones.html">Condiciones de uso</a>
+            <a href="privacidad.html">Aviso de privacidad</a>
+            <a href="ayuda.html">Ayuda</a>
+        </div>
+        <p class="copyright-tracking">© 2026, CreacionesSublime.com o sus afiliados. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

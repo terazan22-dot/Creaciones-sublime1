@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seguimiento de Pedidos - Creaciones Sublime</title>
+    
+    <link rel="stylesheet" href="csstienda.css">
+</head>
+<body>     
+            <div class="topbar">
+            <div class="lado-izquierdo">
+            <div class="logo-top">
+                <img src="Imagenestienda.img/logo.png" alt="Creaciones Sublime">
+            </div>
+
+            <div class="ub">
+            <p><strong>📍 Envíos a toda Colombia</strong></p>
+            <p><strong>🛒 Entrega rápida</strong></p>
+        </div>
+
+        <div class="buscador">
+            <input type="text" id="miInput"
+            placeholder="Buscar productos...">
+            <button id="miBoton">🔍</button>
+        </div>
+        </div>
+
+        <div class="menu-centro">
+
+            <div class="dropdown">
+                <span class="dropbtn">Ofertas ▾</span>
+
+                <div class="dropdown-content">
+                    <a href="promociones.html">Promociones</a>
+                    <a href="descuentos.html">Descuentos</a>
+                    <a href="ofertas.html">Últimas Ofertas</a>
+                </div>
+            </div>
+
+            <div class="menui">
+                    <a href="ayuda.html">Ayuda</a>
+                    <a href="seguimiento.html">Seguimiento</a>
+                    <a href="index.html#contac1">Contacto</a>
+            </div>
+        </div>
+
+        <div class="carrito">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span id="contador">0</span></div>
+
+        </div>
+
+
+        <div class="menu-principal">
+            
+        <nav>
+
+            <div id="hamburguesa" class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <ul class="nav-links" id="nav-links1">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html#prod1">Productos</a></li>
+                <li><a href="ofertas.html">Ofertas</a></li>
+                <li><a href="index.html#contac1">Contacto</a></li>
+            </ul>
+        </nav>
+        
+        </div>
+
+    <main>
+        <div class="seguimiento-contenedor">
+            <h1 class="seguimiento-titulo">Rastrea tu Pedido</h1>
+            <p class="seguimiento-subtitulo">Ingresa los detalles de tu compra para conocer el estado de envío de tu paquete en tiempo real.</p>
+            
+            <form class="seguimiento-formulario">
+                
+                <div class="campo-grupo">
+                    <label for="numero-orden">Número de Orden / Pedido:</label>
+                    <input type="text" id="numero-orden" placeholder="Ej: #CS-10245" required>
+                </div>
+
+                <div class="campo-grupo">
+                    <label for="correo-seguimiento">Correo Electrónico:</label>
+                    <input type="email" id="correo-usuario" placeholder="tu@correo.com" autocomplete="email" required>
+                </div>
+
+                <button type="submit" class="btn-seguimiento-buscar">Continuar</button>
+
+                <p class="legal-consentimiento-amazon">
+                    Al continuar, aceptas las <a href="condiciones.html">Condiciones de Uso</a> y el <a href="privacidad.html">Aviso de Privacidad</a> de Creaciones Sublime.
+                </p>
+
+                <div class="ayuda-link-container">
+                    <a href="ayuda.html" class="link-necesitas-ayuda">¿Necesitas ayuda?</a>
+                </div>
+
+            </form>
+        </div>
+    </main>
+    <footer class="footer-seguimiento-clean">
+        <div class="enlaces-legales-tracking">
+            <a href="condiciones.html">Condiciones de uso</a>
+            <a href="privacidad.html">Aviso de privacidad</a>
+            <a href="ayuda.html">Ayuda</a>
+        </div>
+        <p class="copyright-tracking">© 2026, CreacionesSublime.com o sus afiliados. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        const baseDatosPedidos = {
+            "#cs-10245": {
+                progreso: "en-camino",
+                nota: "💡 <strong>Nota:</strong> Tu paquete se encuentra actualmente en la central de distribución principal rumbo a tu domicilio."
+            },
+            "#cs-55555": {
+                progreso: "preparacion",
+                nota: "📦 <strong>Nota:</strong> Tu pago fue aprobado con éxito. Estamos embalando tus productos tecnológicos con el máximo cuidado."
+            },
+            "#cs-77777": {
+                progreso: "entregado",
+                nota: "🏠 <strong>Nota:</strong> El paquete fue entregado hoy en la portería/dirección indicada. ¡Que disfrutes tu compra!"
+            }
+        };
+
+        function procesarRastreo() {
+            const ordenIngresada = document.getElementById('numero-orden').value.trim().toLowerCase();
+            const correoIngresado = document.getElementById('correo-seguimiento').value.trim();
+            
+            const divAlerta = document.getElementById('mensaje-error-tracking');
+            const divLineaTiempo = document.getElementById('linea-tiempo-envio');
+            const contenedorProgreso = document.getElementById('contenedor-progreso-dinamico');
+            const txtOrden = document.getElementById('txt-orden-id');
+            const txtNota = document.getElementById('txt-nota-envio');
+
+            divAlerta.style.display = 'none';
+            divLineaTiempo.style.display = 'none';
+
+            if (baseDatosPedidos[ordenIngresada]) {
+                const infoPedido = baseDatosPedidos[ordenIngresada];
+                
+                txtOrden.textContent = ordenIngresada.toUpperCase();
+                txtNota.innerHTML = infoPedido.nota;
+
+
+                let htmlProgreso = `<div class="linea-progreso">`;
+                
+
+                const est = infoPedido.progreso;
+                
+                htmlProgreso += `
+                    <div class="paso ${est==='recibido'?'activo': 'completado'}">
+                        <div class="circulo">✓</div><span class="etiqueta">Pedido Recibido</span>
+                    </div>
+                    <div class="paso ${est==='preparacion'?'activo': (est==='recibido'?'':'completado')}">
+                        <div class="circulo">${est==='recibido'?'2':'✓'}</div><span class="etiqueta">En Preparación</span>
+                    </div>
+                    <div class="paso ${est==='en-camino'?'activo': (est==='entregado'?'completado':'')}">
+                        <div class="circulo">${est==='entregado'||est==='en-camino'?'📦':'3'}</div><span class="etiqueta">En Camino</span>
+                    </div>
+                    <div class="paso ${est==='entregado'?'activo':''}">
+                        <div class="circulo">🏠</div><span class="etiqueta">Entregado</span>
+                    </div>
+                `;
+                
+                htmlProgreso += `</div>`;
+                contenedorProgreso.innerHTML = htmlProgreso;
+
+                divLineaTiempo.style.display = 'block';
+                divLineaTiempo.scrollIntoView({ behavior: 'smooth' });
+
+            } else {
+                divAlerta.style.display = 'block';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+    </script>
+
+</body>
+</html>
