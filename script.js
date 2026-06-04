@@ -5,21 +5,46 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (hamburger && menu) {
         hamburger.addEventListener("click", () => {
-            console.log("¡Click detectado!");
             menu.classList.toggle("active");
         });
-    } else {
-        console.log("Menú o hamburguesa no encontrados en esta página.");
     }
 
     const elSlider = document.getElementById("slider");
-
     if (elSlider) {
         setInterval(() => {
             mover("slider", 300);
-        }, 3000); // Se mueve cada 3 segundos
-    } else {
-        console.log("Esta página no contiene slider automático.");
+        }, 3000);
+    }
+
+    const input = document.getElementById('miInput');
+    const boton = document.getElementById('miBoton');
+
+    const realizarBusqueda = () => {
+        const termino = input.value.toLowerCase().trim();
+        const productos = document.querySelectorAll('.producto');
+
+        productos.forEach(producto => {
+            const nombreAtributo = producto.getAttribute('data-nombre') ? producto.getAttribute('data-nombre').toLowerCase() : "";
+            const nombreTexto = producto.querySelector('h3') ? producto.querySelector('h3').innerText.toLowerCase() : "";
+
+            // Si el producto coincide con lo que escribes, se queda. Si no, se oculta.
+            if (nombreAtributo.includes(termino) || nombreTexto.includes(termino)) {
+                producto.style.display = "block";
+            } else {
+                producto.style.display = "none";
+            }
+        });
+    };
+
+    if (boton) {
+        boton.addEventListener('click', (e) => {
+            e.preventDefault(); 
+            realizarBusqueda();
+        });
+    }
+
+    if (input) {
+        input.addEventListener('keyup', realizarBusqueda);
     }
 
 });
@@ -30,69 +55,3 @@ function mover(idDelSlider, direccion) {
         elSlider.scrollLeft += direccion;
     }
 }
-
-/* AUTOPLAY */
-
-setInterval(() => {
-  slider.scrollLeft += 300;
-
-  if (
-    slider.scrollLeft + slider.clientWidth >=
-    slider.scrollWidth
-  ) {
-    slider.scrollLeft = 0;
-  }
-}, 3000);
-
-document.addEventListener('DOMContentLoaded', () => {
-    const input = document.getElementById('miInput');
-    const boton = document.getElementById('miBoton');
-
-    function buscarAhora() {
-        const busqueda = input.value.toLowerCase().trim();
-        
-        if (busqueda !== "") {
-            alert("Buscando en Creaciones Sublime: " + busqueda);
-        } else {
-            alert("Escribe algo para buscar tus accesorios favoritos.");
-        }
-    }
-
-    boton.addEventListener('click', buscarAhora);
-
-    input.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
-            buscarAhora();
-        }
-    });
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-    const input = document.getElementById('miInput');
-    const boton = document.getElementById('miBoton');
-
-
-    const realizarBusqueda = () => {
-        const termino = input.value.toLowerCase().trim();
-        const productos = document.querySelectorAll('.producto');
-
-        productos.forEach(producto => {
-
-            const nombre = producto.getAttribute('data-nombre').toLowerCase();
-
-            if (nombre.includes(termino)) {
-                producto.style.display = "block";
-            } else {
-                producto.style.display = "none";
-            }
-        });
-    };
-
-    if (boton) {
-        boton.addEventListener('click', realizarBusqueda);
-    }
-
-    if (input) {
-        input.addEventListener('keyup', realizarBusqueda);
-    }
-});
