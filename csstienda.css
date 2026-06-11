@@ -671,7 +671,7 @@ img {
     width: 100%;
     height: 220px;
     object-fit: contain;
-    border-radius: 8px;
+    border-radius: 30px;
 }
 
 .producto h3 {
@@ -2318,88 +2318,76 @@ CAMBIO DE FUENTE INTEGRAL PARA EL CENTRO DE AYUDA (HTML REAL)
     width: 100%;
 }
 
-/* CATÁLOGO */
+/* Catálogo */
 
-main.productos {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    padding: 20px;
+#catalogo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
     max-width: 1200px;
     margin: 0 auto;
-}
-
-main.productos .producto {
-    background-color: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 16px;
     padding: 20px;
-    box-sizing: border-box;
-    
-    flex: 1;
-    min-width: 280px;
-    max-width: 320px;
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
 }
 
-main.productos .producto img {
-    width: 100%;
-    height: 330px;
-    object-fit: cover;
+#catalogo-grid .productos, 
+#catalogo-grid .producto {
+    max-width: 100%;
+    min-width: 0;
     border-radius: 20px;
-    display: block;
+    box-sizing: border-box;
 }
 
-main.productos .producto h3 {
+#catalogo-grid .productos img, 
+#catalogo-grid .producto img {
+    border-radius: 20px;
+    object-fit: cover;
     width: 100%;
-    word-wrap: break-word;
-    font-size: 1.2rem;
-    line-height: 1.4;
-    margin: 15px 0 10px 0;
+    height: 280px;
+    overflow: hidden;
 }
 
-main.productos .producto p:nth-of-type(2), 
-main.productos .producto p:nth-of-type(3) {
-    text-align: left;
-    width: 100%;
-    padding-left: 0px;
-}
+@media (max-width: 600px) {
 
-@media screen and (max-width: 768px) {
-    
-    #catalogo-grid.productos, main.productos, #catalogo-grid {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    main.productos, #catalogo-grid {
-        display: grid;
+    #catalogo-grid {
         grid-template-columns: 1fr;
-        justify-items: center;
-        gap: 25px;
+        gap: 20px;
+        padding: 10px;
     }
 
-    main.productos {
-        flex-direction: column;
-        align-items: center;
-        gap: 25px;
-    }
-
-    main.productos .producto {
+    #catalogo-grid .producto {
         width: 100%;
-        max-width: 320px;
-        flex: none;
+        height: auto;
+        min-height: max-content;
+        box-sizing: border-box;
+        padding: 15px;
+        overflow: hidden;
     }
 
-    main.productos .producto img {
-        height: 200px;
-        border-radius: 20px;
+    #catalogo-grid .producto h3 {
+        display: block;
+        white-space: normal;
+        overflow-wrap: break-word;
+        word-break: break-word;
+        max-width: 100%;
+        font-size: 1.3rem;
+        line-height: 1.3;
+        margin-bottom: 10px;
     }
+
+    #catalogo-grid .producto p,
+    #catalogo-grid .producto div {
+        display: block;
+        white-space: normal;
+        overflow-wrap: break-word;
+        max-width: 100%;
+    }
+
+    #catalogo-grid .producto img {
+        width: 100%;
+        max-width: 100%;
+        height: 240px;
+        object-fit: cover;
+        border-radius: 12px;
+    }
+
 }
-
