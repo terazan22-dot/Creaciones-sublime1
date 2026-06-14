@@ -2428,3 +2428,13 @@ CAMBIO DE FUENTE INTEGRAL PARA EL CENTRO DE AYUDA (HTML REAL)
     }
 
 }
+
+
+#pagina-inicio .sub-pro .producto img,
+#pagina-descuentos .sub-pro .producto img,
+#pagina-ofertas .sub-pro .producto img,
+#pagina-promociones .sub-pro .producto img { 
+    border-radius: 20px;
+    object-fit: contain;
+    background-color: #e0e0e0;
+}
