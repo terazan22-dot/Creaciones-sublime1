@@ -2319,25 +2319,31 @@ CAMBIO DE FUENTE INTEGRAL PARA EL CENTRO DE AYUDA (HTML REAL)
 }
 
 @media (max-width: 600px) {
-
     .clausula-caja {
-        height: auto;
-        overflow: visible;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
         padding: 15px;
+        margin-left: 0;
+        margin-right: 0;
+        overflow: hidden;
     }
 
     .clausula-caja div, 
-    .clausula-caja ul,
-    .clausula-caja p {
+    .clausula-caja p, 
+    .clausula-caja ul, 
+    .clausula-caja li {
         display: block;
         float: none;
         width: 100%;
         max-width: 100%;
         box-sizing: border-box;
-        word-wrap: break-word;
-        margin-bottom: 15px;
+        white-space: normal;
+        overflow-wrap: break-word;
+        word-break: break-word;
     }
 }
+
 
 /* Catálogo */
 
