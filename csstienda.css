@@ -2301,11 +2301,13 @@ CAMBIO DE FUENTE INTEGRAL PARA EL CENTRO DE AYUDA (HTML REAL)
 .clausula-caja ul {
     margin-top: 10px;
     padding-left: 20px;
+    list-style: none;
+    padding-inline-start: 0;
 }
 
 .clausula-caja li {
     margin-bottom: 8px;
-    padding-right: 30px;
+    padding-right: 0px;
     padding-left: 0px;
     text-align: center
 }
@@ -2323,9 +2325,11 @@ CAMBIO DE FUENTE INTEGRAL PARA EL CENTRO DE AYUDA (HTML REAL)
 
 @media (max-width: 600px) {
     .clausula-caja {
+        display: block;
+        float: none;
         width: 100%;
         max-width: 100%;
-        box-sizing: border-box;
+        box-sizing: border-box;;
         padding: 15px;
         margin-left: 0;
         margin-right: 0;
@@ -2344,6 +2348,9 @@ CAMBIO DE FUENTE INTEGRAL PARA EL CENTRO DE AYUDA (HTML REAL)
         white-space: normal;
         overflow-wrap: break-word;
         word-break: break-word;
+        text-align: center;
+        padding: 0;
+        margin: 0 auto 15px auto;
     }
 }
 
