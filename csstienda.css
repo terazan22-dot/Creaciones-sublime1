@@ -764,6 +764,15 @@ img {
   transform: scale(1.08);
 }
 
+@media (max-width: 768px) {
+  .item-slider img {
+    width: 100%; 
+    height: 200px;   
+    object-fit: cover; 
+    display: block;
+  }
+}
+
 /* FLECHAS */
 
 .izquierda, .derecha {
