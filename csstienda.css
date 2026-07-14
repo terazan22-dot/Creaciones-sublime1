@@ -732,17 +732,11 @@ img {
 }
 
 .slider-productos {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-  padding-top: 10px;
-  padding-bottom: 0px;
-  margin-bottom: 0px;
-  height: auto;
-  max-height: 180px;
+  display: flex;       
+  overflow-x: auto;         
+  overflow-y: hidden;       
+  -webkit-overflow-scrolling: touch; 
+  overscroll-behavior-y: contain; 
 }
 
 .item-slider {
@@ -2434,7 +2428,7 @@ CAMBIO DE FUENTE INTEGRAL PARA EL CENTRO DE AYUDA (HTML REAL)
 #pagina-descuentos .sub-pro .producto img,
 #pagina-ofertas .sub-pro .producto img,
 #pagina-promociones .sub-pro .producto img { 
-    border-radius: 20px;
-    object-fit: contain;
+    border-radius: 40px;
+    object-fit: cover;
     background-color: #e0e0e0;
 }
